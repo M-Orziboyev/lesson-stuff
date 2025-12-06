@@ -1,7 +1,55 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css");
 
+:root {
+    --bg-color: #041D56;
+    --nav-bg-color: #01082D;
+    --text-color: #ADE1FB;
+    --secondary-text-color: #ade1fbbc;
+    --link-color: #266CA9;
+    --link-hover-color: #ADE1FB;
+    --border-color: #01082D;
+    --box-shadow-color: #01082D;
+    --btn-bg-color: #01082D;
+    --btn-text-color: #ADE1FB;
+    --btn-hover-bg-color: #ADE1FB;
+    --btn-hover-text-color: #01082D;
+    --line-color: #ADE1FB;
+}
+
+.light-mode {
+    --bg-color: #f0f2f5;
+    --nav-bg-color: #ffffff;
+    --text-color: #1c1e21;
+    --secondary-text-color: #606770;
+    --link-color: #0066cc;
+    --link-hover-color: #0056b3;
+    --border-color: #dcdfe6;
+    --box-shadow-color: #dcdfe6;
+    --btn-bg-color: #0066cc;
+    --btn-text-color: #ffffff;
+    --btn-hover-bg-color: #0056b3;
+    --btn-hover-text-color: #ffffff;
+    --line-color: #0066cc;
+}
+
+.pink-mode {
+    --bg-color: #fce4ec;
+    --nav-bg-color: #f8bbd0;
+    --text-color: #880e4f;
+    --secondary-text-color: #ad1457;
+    --link-color: #d81b60;
+    --link-hover-color: #c2185b;
+    --border-color: #f48fb1;
+    --box-shadow-color: #f06292;
+    --btn-bg-color: #d81b60;
+    --btn-text-color: #ffffff;
+    --btn-hover-bg-color: #c2185b;
+    --btn-hover-text-color: #ffffff;
+    --line-color: #d81b60;
+}
+
 body {
-    background-color: #041D56;
+    background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -9,6 +57,7 @@ body {
     font-family: sans-serif;
     cursor: default;
     position: relative;
+    transition: background-color 0.3s ease;
 }
 
 a {
@@ -25,15 +74,17 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #01082D;
+    background: var(--nav-bg-color);
     padding: 0 30px 0 30px;
-    box-shadow: 2px 3px 4px #01082D;
+    box-shadow: 2px 3px 4px var(--box-shadow-color);
     margin-top: 20px;
     border-radius: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo>h1 {
-    color: #ADE1FB;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 .links {
@@ -51,11 +102,12 @@ nav {
     text-decoration: none;
     font-weight: bold;
     font-size: large;
-    color: #266CA9;
+    color: var(--link-color);
+    transition: color 0.3s ease;
 }
 
 .link>a:hover {
-    color: #ADE1FB;
+    color: var(--link-hover-color);
 }
 
 .container {
@@ -83,13 +135,14 @@ nav {
 .circle {
     width: 400px;
     height: 400px;
-    border: 12px solid #01082D;
+    border: 12px solid var(--border-color);
     overflow: hidden;
     border-radius: 360px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 0px 10px #01082D;
+    box-shadow: 0px 0px 10px var(--box-shadow-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .info {
@@ -102,26 +155,28 @@ nav {
 
 .info>h1 {
     font-size: 60px;
-    color: #ADE1FB;
+    color: var(--text-color);
     margin-bottom: 0;
+    transition: color 0.3s ease;
 }
 
 .info>h2 {
     margin-bottom: 0;
-    color: #ade1fbbc;
+    color: var(--secondary-text-color);
+    transition: color 0.3s ease;
 
 }
 
 .info>.text {
     width: 400px;
-    color: #ade1fb97;
+    color: var(--secondary-text-color);
 
     font-weight: bold;
 }
 
 .info>.text>p:last-child {
     font-size: 20px;
-    color: #ADE1FB;
+    color: var(--text-color);
 }
 
 .btns {
@@ -135,20 +190,21 @@ nav {
 .btns>a {
     width: 49%;
     height: 45px;
-    background: #01082D;
+    background: var(--btn-bg-color);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
     font-size: 16px;
     font-weight: bold;
-    color: #ADE1FB;
+    color: var(--btn-text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 
 }
 
 .btns>a:hover {
-    color: #01082D;
-    background: #ADE1FB;
+    color: var(--btn-hover-text-color);
+    background: var(--btn-hover-bg-color);
 }
 
 .line {
@@ -156,6 +212,33 @@ nav {
     bottom: -150px;
     width: 80%;
     height: 10px;
-    background: #ADE1FB;
+    background: var(--line-color);
     border-radius: 360px;
+    transition: background-color 0.3s ease;
+}
+
+.modes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.modes>span {
+    width: 20px;
+    height: 20px;
+    border-radius: 360px;
+    cursor: pointer;
+}
+
+.dark {
+    background: #01082D;
+}
+
+.light {
+    background: #f0f0f0;
+}
+
+.pink {
+    background: #f8bbd0;
 }
