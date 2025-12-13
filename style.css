@@ -242,3 +242,74 @@ nav {
 .pink {
     background: #f8bbd0;
 }
+/* About Section */
+#about {
+    margin-top: 5rem;
+    position: relative;
+    color: var(--text-color);
+}
+
+.about-containers {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.about-details-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-pic {
+    border-radius: 2rem;
+}
+
+.details-container {
+    padding: 1.5rem;
+    flex: 1;
+    background: var(--nav-bg-color);
+    border-radius: 2rem;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.details-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px var(--box-shadow-color);
+}
+
+.section-container {
+    gap: 4rem;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section__pic-container {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+
+.section__text__p1 {
+    text-align: center;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.text-container {
+    text-align: justify;
+}
